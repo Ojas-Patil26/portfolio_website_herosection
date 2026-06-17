@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+:root {
+  /* Palette (per spec) */
+  --light-bg: #FFFFFF;
+  --dark-bg: #000000;
+  --light-text: #4A4A4A;
+  --dark-text: #D1D0D0;
+  --light-accent: #8DB196;
+  --dark-accent: #988686;
+  --light-secondary: #C8C8C8;
+  --dark-secondary: #5C4E4E;
+
+  /* Active (resolved) values — default to light mode */
+  --bg: var(--light-bg);
+  --text: var(--light-text);
+  --accent: var(--light-accent);
+  --secondary: var(--light-secondary);
+  --nav-bg: rgba(255, 255, 255, 0.7);
+}
+
+body.dark {
+  --bg: var(--dark-bg);
+  --text: var(--dark-text);
+  --accent: var(--dark-accent);
+  --secondary: var(--dark-secondary);
+  --nav-bg: rgba(0, 0, 0, 0.55);
+}
+
+/* 0.4s ease colour transition across the entire page on theme toggle */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  transition: background-color 0.4s ease, color 0.4s ease,
+    border-color 0.4s ease, fill 0.4s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* scroll room so the hero video can scrub; real sections come later */
+.placeholder-sections section {
+  height: 60vh;
+}
